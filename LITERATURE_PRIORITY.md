@@ -65,3 +65,50 @@ Critical-Theorem translation turns that rank data into:
 
 This improves experimental design and finite certification.  It does not
 increase a $p$-adic exponent or prove an additional supercongruence.
+
+## Small-deviation module
+
+### Verdict
+
+The sharp bound recorded in
+[notes/LowDimensionalSmallDeviations.md](notes/LowDimensionalSmallDeviations.md)
+for \(n\leq4\) is not a new standalone theorem. It follows from:
+
+1. Samuels' extremal theorem for sums of at most four independent
+   nonnegative random variables;
+2. the stronger finite-dimensional inequality inside Paulin's proof; and
+3. the elementary mean-completion transformation
+   \(Y_i=X_i+1-\mathbb EX_i\).
+
+The useful contribution of this module is organizational: it states the exact
+low-dimensional consequence in the notation of the July 2026 work, proves
+the strict comparison with their shared \(0<\delta<1\) bound, records both
+sharpness families, and separates their common new-preprint dependency from
+the independent classical proof path.
+
+The exact \(n=2\) admissible-merger proof is explicitly recorded by
+Nie--Wei. No priority claim is made for either that proof route or the
+low-dimensional constant.
+
+### Source matrix
+
+| Source | Relevant content | Relationship to this module |
+|---|---|---|
+| [Samuels (1966)](https://doi.org/10.1214/aoms/1177699614) and Samuels (1968) | Extremal lower-tail theorem proved through four summands | Supplies the classical low-dimensional result |
+| [Feige (2004/2005 manuscript)](https://www.wisdom.weizmann.ac.il/~feige/Others/newmarkov.pdf) | States the endpoint extremizers and reports Samuels' theorem for \(n\leq4\) | Supplies the centered-small-deviation formulation and historical boundary |
+| [Paulin (2017)](https://arxiv.org/abs/1703.05152) | Gives a stronger finite-dimensional two-endpoint inequality inside the proof that Samuels' conjecture implies Feige's conjecture | Reduces the finite Samuels family to the two endpoint candidates |
+| [Vlassis--Thomas (2026)](https://arxiv.org/abs/2607.08415) | Proves validity of Gaffke's Dirichlet merger | Shared input to the concurrent geometric proofs, but not to the \(n\leq4\) Samuels--Paulin proof |
+| [Ming--Ramdas--Shen--Wang--Waudby-Smith (2026)](https://arxiv.org/abs/2607.18661) | Constructs the exact admissible bivariate dominator \(K_2^{\mathrm{ad}}\) | Supplies the merger used in the short \(n=2\) proof |
+| [Fu--Han--Wang--Yan--Zhang--Zhou (2026)](https://arxiv.org/abs/2607.23980) | Gives the dimension-dependent bound for every \(n,\delta\), sharp for \(\delta\geq1\) | Immediate baseline sharpened here in dimensions \(2,3,4\) |
+| [Stander (2026)](https://doi.org/10.5281/zenodo.21622951) | Conditionally derives the shared \(0<\delta\leq1\) formula from Vlassis--Thomas | Makes the shared recent-preprint dependency explicit |
+| [Nie--Wei (2026)](https://arxiv.org/abs/2607.24528) | Gives the shared \(0<\delta\leq1\) bound and the exact all-slack result for \(n=2\) | Supplies prior art for the modern bivariate proof and confirms the general scope boundary |
+
+The three July manuscripts and their exact overlap are compared in
+[CONCURRENT_WORK.md](CONCURRENT_WORK.md). Their public versions appeared
+within hours of one another, so this repository records chronology without
+drawing a priority conclusion.
+
+A separate [2025 preprint](https://arxiv.org/abs/2508.07316) claims the full
+arbitrary-\(\delta\) conjecture, while the later July 2026 papers describe the
+general small-slack regime as open. This repository does not adjudicate or
+rely on that claim.
