@@ -59,6 +59,41 @@ def difference_set(points: tuple[int, ...]) -> set[int]:
     return {a ^ b for a in points for b in points}
 
 
+def binary_rank(vectors: tuple[int, ...]) -> int:
+    """Rank of binary vectors represented by integers."""
+    basis: dict[int, int] = {}
+    for vector in vectors:
+        x = vector
+        while x:
+            pivot = x.bit_length() - 1
+            if pivot in basis:
+                x ^= basis[pivot]
+            else:
+                basis[pivot] = x
+                break
+    return len(basis)
+
+
+def characteristic_polynomial_value(elements: tuple[int, ...], q: int) -> int:
+    """Evaluate the vector-matroid characteristic polynomial at q."""
+    rho = binary_rank(elements)
+    total = 0
+    for mask in range(1 << len(elements)):
+        subset = tuple(
+            elements[i] for i in range(len(elements)) if (mask >> i) & 1
+        )
+        term = q ** (rho - binary_rank(subset))
+        total += -term if mask.bit_count() & 1 else term
+    return total
+
+
+def matroid_injection_probability(points: tuple[int, ...], t: int) -> Fraction:
+    elements = tuple(sorted(difference_set(points) - {0}))
+    rho = binary_rank(elements)
+    q = 1 << t
+    return Fraction(characteristic_polynomial_value(elements, q), q**rho)
+
+
 def check_affine_formula() -> int:
     checks = 0
     # It suffices to use the standard r-dimensional subspace. Translation and
@@ -68,7 +103,9 @@ def check_affine_formula() -> int:
         for t in range(0, 6):
             exact = exact_injection_probability(points, r, t)
             expected = rank_probability_formula(r, t)
+            matroid = matroid_injection_probability(points, t)
             assert exact == expected, (r, t, exact, expected)
+            assert exact == matroid, (r, t, exact, matroid)
             if t >= r:
                 failure = 1 - exact
                 assert failure <= Fraction((1 << r) - 1, 1 << t)
@@ -86,7 +123,16 @@ def check_difference_set_bound() -> int:
             for points in combinations(universe, size):
                 distinct_differences = len(difference_set(points)) - 1
                 for t in range(0, 4):
-                    exact_failure = 1 - exact_injection_probability(points, n, t)
+                    exact_success = exact_injection_probability(points, n, t)
+                    matroid_success = matroid_injection_probability(points, t)
+                    assert exact_success == matroid_success, (
+                        n,
+                        points,
+                        t,
+                        exact_success,
+                        matroid_success,
+                    )
+                    exact_failure = 1 - exact_success
                     bound = Fraction(distinct_differences, 1 << t)
                     assert exact_failure <= bound, (
                         n,
@@ -145,7 +191,7 @@ def main() -> None:
     spectrum_checks = check_matching_spectra()
     total = affine_checks + difference_checks + spectrum_checks
     print(f"affine formula checks: {affine_checks}")
-    print(f"difference-set checks: {difference_checks}")
+    print(f"difference-set and matroid-law checks: {difference_checks}")
     print(f"matching-spectrum checks: {spectrum_checks}")
     print(f"all {total} exact checks passed")
 

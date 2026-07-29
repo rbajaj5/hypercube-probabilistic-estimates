@@ -11,6 +11,7 @@ supercongruences.
 | Result | Mathematical status | What improves | Novelty status |
 |---|---|---|---|
 | [Exact hashing of affine Fourier spectra](notes/AffineSpectrumHashing.md) | Complete elementary proof; exhaustive exact checks in the stated finite ranges | Replaces a generic `2 log₂(s)` collision budget by an exact formula and a `log₂(s)`-scale sufficient budget when the support is an affine subspace | The random-matrix rank formula is classical.  The contribution here is its explicit specialization to matching-phase/dyadic-defect spectra; no literature-priority claim is made. |
+| [Matroid law for exact linear hashing](notes/MatroidHashingLaw.md) | Complete proof from inclusion--exclusion and the Crapo--Rota Critical Theorem; exact finite checks | Gives the exact probability for every finite support through the characteristic polynomial of its difference matroid | Classical theorem in a new hashing/Fourier presentation; no priority claim for the probability law |
 
 ## Economist-style assessment
 
@@ -19,9 +20,9 @@ future theorem.
 
 | Criterion | Score | Reason |
 |---|---:|---|
-| Mathematical impact | 3 | A useful parameter sharpening, not a deep new theorem |
-| Reusability | 8 | Applies to any affine Fourier support over `F₂` |
-| Deployment value | 6 | Can reduce the number of hash buckets and measurements in structured sparse-spectrum tests |
+| Mathematical impact | 4 | A useful exact synthesis and parameter sharpening, not a new foundational theorem |
+| Reusability | 9 | The matroid law applies to every finite support over `F₂` |
+| Deployment value | 6 | Gives exact measurement budgets for structured sparse spectra |
 | Proof confidence | 9 | Short proof plus exact exhaustive checks |
 | Literature novelty | 2 | The rank formula is standard; the application is the new organizational point |
 
@@ -35,6 +36,9 @@ python verification/verify_affine_spectrum_hashing.py
 
 The checker uses exact integer and rational arithmetic.  It has no third-party
 dependencies.
+
+See [LITERATURE_PRIORITY.md](LITERATURE_PRIORITY.md) for the documented
+priority boundary and the resulting supercongruence-defect application.
 
 ## Source boundary
 
