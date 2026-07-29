@@ -76,13 +76,11 @@ dimension $r$.  Then
 ```math
 \Pr[L|_A\text{ is injective}]
 =
-\begin{cases}
-\displaystyle\prod_{j=0}^{r-1}\left(1-2^{j-t}\right),&t\geq r,\\[1.2ex]
-0,&t<r.
-\end{cases}
+\prod_{j=0}^{r-1}\left(1-2^{j-t}\right)
+\quad\text{if }t\geq r,
 ```
 
-Consequently, for $t\geq r$,
+whereas the probability is zero if $t<r$. Consequently, for $t\geq r$,
 
 ```math
 \Pr[L|_A\text{ is not injective}]
@@ -176,13 +174,12 @@ Theorem 2 now gives the exact separation probability
 ```math
 \Pr[L\text{ separates }\mathrm{supp}\,\widehat g_{\delta,k}]
 =
-\begin{cases}
-\displaystyle\prod_{j=0}^{2k-1}(1-2^{j-t}),&t\geq2k,\\
-0,&t<2k.
-\end{cases}
+\prod_{j=0}^{2k-1}(1-2^{j-t})
+\quad\text{if }t\geq2k,
 ```
 
-Thus the hashing budget for this spectrum is
+and the probability is zero if $t<2k$. Thus the hashing budget for this
+spectrum is
 
 ```math
 t\geq 2k+\left\lceil\log_2(1/\delta)\right\rceil
