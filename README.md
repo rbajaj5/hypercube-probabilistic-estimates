@@ -15,6 +15,7 @@ small-deviation modules are mathematically independent.
 |---|---|---|---|
 | [Exact hashing of affine Fourier spectra](notes/AffineSpectrumHashing.md) | Complete elementary proof; exhaustive exact checks in the stated finite ranges | Replaces a generic `2 log₂(s)` collision budget by an exact formula and a `log₂(s)`-scale sufficient budget when the support is an affine subspace | The random-matrix rank formula is classical.  The contribution here is its explicit specialization to matching-phase/dyadic-defect spectra; no literature-priority claim is made. |
 | [Matroid law for exact linear hashing](notes/MatroidHashingLaw.md) | Complete proof from inclusion--exclusion and the Crapo--Rota Critical Theorem; exact finite checks | Gives the exact probability for every finite support through the characteristic polynomial of its difference matroid | Classical theorem in a new hashing/Fourier presentation; no priority claim for the probability law |
+| [Exact projector matrix-hypercube law](notes/ProjectorMatrixHypercubeLaw.md) | Complete elementary enumeration for two real orthonormal projector bases | Replaces a variance-only matrix-Rademacher estimate by the complete angle-sensitive operator-norm distribution; the Zhang projector frame is the extremal mutually unbiased case | Elementary structured calculation; no standalone priority claim |
 | [Sharp small-deviation bounds in dimensions at most four](notes/LowDimensionalSmallDeviations.md) | Complete corollary of Samuels' theorem and the finite-dimensional inequality in Paulin's proof; explicit extremizers | For \(2\leq n\leq4\) and \(0<\delta<1\), strictly improves the \(\delta(n/(n+\delta))^n\) branch of [arXiv:2607.23980](https://arxiv.org/abs/2607.23980) | The sharp low-dimensional theorem is classical; no priority claim |
 | [Concurrent small-deviation work](CONCURRENT_WORK.md) | Formula, chronology, and dependency audit of three July 2026 manuscripts | Separates their common Vlassis--Thomas proof input from the independent Samuels--Paulin route for \(n\leq4\) | Chronology only; no priority inference |
 
@@ -37,10 +38,11 @@ Run:
 
 ```text
 python verification/verify_affine_spectrum_hashing.py
+python verification/verify_projector_matrix_hypercube.py
 python verification/verify_low_dimensional_bounds.py
 ```
 
-Both checkers use exact integer and rational arithmetic and have no
+All three checkers use exact integer and rational arithmetic and have no
 third-party dependencies. The small-deviation checker audits the displayed
 formulas, the two sharpness families, the concurrent-work comparisons, and
 the reduction of the Samuels candidates on a large exact grid. It does not

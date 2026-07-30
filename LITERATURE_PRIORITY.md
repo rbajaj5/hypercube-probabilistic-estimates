@@ -112,3 +112,31 @@ A separate [2025 preprint](https://arxiv.org/abs/2508.07316) claims the full
 arbitrary-\(\delta\) conjecture, while the later July 2026 papers describe the
 general small-slack regime as open. This repository does not adjudicate or
 rely on that claim.
+
+## Projector matrix-hypercube module
+
+### Verdict
+
+The
+[exact two-basis operator-norm law](notes/ProjectorMatrixHypercubeLaw.md)
+is an elementary sixteen-vertex calculation, not a claimed new general
+matrix-concentration theorem. Its value is that it extracts a valid
+probabilistic consequence from the rank-one projector geometry behind the
+counterexample to Zhang's Conjecture 4.1:
+
+1. it gives the complete angle-sensitive norm distribution and every
+   positive norm moment;
+2. it identifies the mutually unbiased Zhang frame as the maximizer of the
+   expected norm within the two-basis family; and
+3. it shows exactly what information is lost by the common variance proxy
+   \(\|\sum_iP_i^2\|=2\), which is angle-independent.
+
+The module neither uses the false conjectured inequality nor changes the
+scalar small-deviation and linear-hashing results.
+
+### Source matrix
+
+| Source | Relevant content | Relationship to this module |
+|---|---|---|
+| [Zhang (2014/2018)](https://arxiv.org/abs/1411.5058) | States the four-matrix auxiliary conjecture in the noncommutative AM--GM program | Supplies the conjectural setting; the exact projector counterexample supplies this module's distinguished frame |
+| [Tropp (2010/2012)](https://arxiv.org/abs/1004.4389) | Gives dimension-dependent subgaussian bounds for matrix Gaussian and Rademacher series in terms of a matrix variance proxy | Supplies the general concentration baseline that the exact structured law calibrates |
