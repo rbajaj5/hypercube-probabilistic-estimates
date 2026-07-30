@@ -33,6 +33,11 @@ moment bound. This note gives two such calculations:
 Every formula below is exact for a standard Pareto scale. No asymptotic
 regular-variation theorem is required.
 
+The numerical
+[knot-volume companion](KnotVolumeHypercubeMixtures.md)
+averages this exact conditional law over 16 reproducibly sampled phase
+parameters and reports the resulting tail coefficients.
+
 ## 2. Exact Pareto mixture of the hypercube law
 
 Let \(R\) be independent of the signs and have the standard Pareto tail

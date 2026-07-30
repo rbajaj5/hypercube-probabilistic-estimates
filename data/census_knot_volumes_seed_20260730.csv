@@ -1,0 +1,17 @@
+seed,census_size,sample_size,index,name,volume,volume_accuracy,solution_type
+20260730,3116,16,138,K7_67,5.489070361767,10,all tetrahedra positively oriented
+20260730,3116,16,243,K8_43,4.885011617269,10,all tetrahedra positively oriented
+20260730,3116,16,691,K9_190,5.982568791920,10,all tetrahedra positively oriented
+20260730,3116,16,705,K9_204,6.010157774265,10,all tetrahedra positively oriented
+20260730,3116,16,716,K9_215,6.053722132960,10,all tetrahedra positively oriented
+20260730,3116,16,1041,K9_540,7.606770256691,10,all tetrahedra positively oriented
+20260730,3116,16,1351,K10_85,5.087757381375,10,all tetrahedra positively oriented
+20260730,3116,16,1634,K10_368,6.528915778016,10,all tetrahedra positively oriented
+20260730,3116,16,2186,K10_920,7.952890034180,10,all tetrahedra positively oriented
+20260730,3116,16,2209,K10_943,7.989149509813,10,all tetrahedra positively oriented
+20260730,3116,16,2303,K10_1037,8.157652957719,10,all tetrahedra positively oriented
+20260730,3116,16,2304,K10_1038,8.158448838770,10,all tetrahedra positively oriented
+20260730,3116,16,2427,K10_1161,8.349216973734,10,all tetrahedra positively oriented
+20260730,3116,16,2449,K10_1183,8.371813910883,10,all tetrahedra positively oriented
+20260730,3116,16,2867,K10_1601,8.961972018019,10,all tetrahedra positively oriented
+20260730,3116,16,3005,K10_1739,9.251126785215,10,all tetrahedra positively oriented
