@@ -18,6 +18,14 @@ small-deviation modules are mathematically independent.
 | [Exact projector matrix-hypercube law](notes/ProjectorMatrixHypercubeLaw.md) | Complete elementary enumeration for two real orthonormal projector bases | Replaces a variance-only matrix-Rademacher estimate by the complete angle-sensitive operator-norm distribution; the Zhang projector frame is the extremal mutually unbiased case | Elementary structured calculation; no standalone priority claim |
 | [Heavy-tail projector mixtures](notes/ProjectorHeavyTailMixtures.md) | Exact Pareto scale-mixture and quartic-shock calculations | Gives the exact angular tail coefficient, its phase transition at exponent \(2\), common-shock exponent quartering, and the independent-shock logarithmic correction | Elementary Pareto/Erlang consequences of the projector law; no general regular-variation or systemic-risk priority claim |
 | [Knot-volume hypercube mixtures](notes/KnotVolumeHypercubeMixtures.md) | Reproducible numerical experiment plus exact finite pushforward law | Turns fractional hyperbolic volumes of 16 seeded census knots into angle-labeled projector cubes, a normalized 256-configuration law, and exact Pareto tail coefficients | Experimental application of the projector law; no knot-volume equidistribution or random-knot claim |
+| [Collatz parity cubes](notes/CollatzParityHypercube.md) | Exact finite-horizon parity cube plus classical Kolmogorov and Berry--Esseen consequences; exact affine-residue transfer law | Adds simultaneous prefix control, an \(O(m^{-1/2})\) endpoint normal approximation, fixed-mode circle decay, and a complete exceptional-prime-\(3\) residue law | Classical probability applied to the Bernstein--Lagarias parity coding, plus an elementary finite-field transfer calculation; no Collatz-conjecture claim |
+| [Hypercube walks and matrix mixing](notes/HypercubeWalkMatrixMixing.md) | Exact Walsh spectrum for the coordinate-refresh walk, observable-specific relaxation, and beta-overlap matrix estimates | Separates full-cube \(d\log d\) mixing from degree-two matrix-energy \(d\)-scale relaxation; quantifies almost-orthogonal random projector frames using the GOE angular law | Classical hypercube mixing plus an exact matrix-observable specialization; no GOE spectral or Collatz-orbit claim |
+| [Hex winner noise and mixing](notes/HexWinnerNoiseMixing.md) | Exact topology, spectra through \(3\times3\), influence through \(4\times4\), and a seeded batched noise/pivotality simulation through \(31\times31\) | Separates the raw tie-free winner from the complement-odd crossing contrast and supplies finite-size winner-noise and influence diagnostics | Classical Hex topology and Boolean noise analysis plus a reproducible experiment; no efficient winning-strategy or scaling-limit claim |
+| [Reflection-positive hypercube pictures](notes/ReflectionPositiveHypercubePictures.md) | Realizes mirror gluing as a positive autocorrelation Hankel kernel; proves complete monotonicity, log-convexity, moment reconstruction, and influence-only bounds | Turns a few refresh/noise lags into spectral consistency constraints and adds a certified \(4\times4\) Hex mixing interval plus an exact two-step anchor | Classical finite moment and Walsh identities inspired by Jaffe--Liu's picture-language program; no Ising-duality, scaling-limit, or priority claim |
+| [Noisy reciprocity on a two-bit cube](notes/NoisyReciprocityHypercube.md) | Exact four-state Markov law for memory-one Prisoner's Dilemma strategies; stationary payoffs and the signed spectrum of noisy generous Tit-for-Tat | Identifies the negative retaliation mode, quantifies how generosity shortens error cascades, and recovers reflection positivity after two-step subsampling | Classical Markov/game calculation motivated by Veritasium and Wu--Axelrod; no universal optimal-strategy or evolutionary-scaling claim |
+| [Exact discrete loop equations for projector hypercubes](notes/DiscreteLoopEquationsProjectorCubes.md) | Exact Rademacher integration by parts plus full finite-rank resolvent difference; matrix, trace, rank-one cavity, and multi-resolvent cavity identities | Gives a zero-remainder loop diagnostic, retains higher discrete product terms, exposes perturbations beyond the second moment, and adds a finite-sample residual certificate | Elementary finite-cube specialization motivated by Bourgade--Huang's cumulant and switching calculus; not their closed hierarchy, and no local-law or random-matrix-universality claim |
+| [Hopf-fiber projective kernel](notes/HopfFiberHypercubeKernel.md) | Embeds Boolean vertices in \(\mathbb{CP}^{d-1}\), derives the exact Fubini--Study/Hamming kernel, and transfers it to product noise, refresh walks, and Hex Walsh masses | Adds an exact projectively weighted Hex correlation computable from existing spectra, plus a finite Gaussian determinant for the cube Laplacian | Elementary consequences of standard Hopf-fiber Fourier and Fubini--Study identities; no endorsement of the source preprint's physical claims or priority claim |
+| [KAN baselines on the Boolean cube](notes/KANHypercubeBaselines.md) | Exact collapse of every scalar one-layer KAN on binary inputs to Walsh degree at most one; optimal \(L^2\) error and noise/mixing remainder certificates | Replaces unidentifiable spline resolution by controlled Walsh interactions and quantifies the gain exactly for Hex through \(3\times3\) | Elementary finite-cube projection identities motivated by arXiv:2407.11075's evaluation principles; no KAN-performance or priority claim |
 | [Sharp small-deviation bounds in dimensions at most four](notes/LowDimensionalSmallDeviations.md) | Complete corollary of Samuels' theorem and the finite-dimensional inequality in Paulin's proof; explicit extremizers | For \(2\leq n\leq4\) and \(0<\delta<1\), strictly improves the \(\delta(n/(n+\delta))^n\) branch of [arXiv:2607.23980](https://arxiv.org/abs/2607.23980) | The sharp low-dimensional theorem is classical; no priority claim |
 | [Concurrent small-deviation work](CONCURRENT_WORK.md) | Formula, chronology, and dependency audit of three July 2026 manuscripts | Separates their common Vlassis--Thomas proof input from the independent Samuels--Paulin route for \(n\leq4\) | Chronology only; no priority inference |
 
@@ -43,13 +51,25 @@ python verification/verify_affine_spectrum_hashing.py
 python verification/verify_projector_matrix_hypercube.py
 python verification/verify_projector_heavy_tails.py
 python verification/verify_knot_volume_hypercubes.py
+python verification/verify_collatz_parity_estimates.py
+python verification/verify_hypercube_walk_matrix_mixing.py
+python verification/verify_hex_winner_noise.py
+python verification/verify_hex_noise_simulation.py
+python verification/verify_reflection_positive_hypercube.py
+python verification/verify_noisy_reciprocity_hypercube.py
+python verification/verify_discrete_loop_projector_cubes.py
+python verification/verify_hopf_fiber_hypercube.py
+python verification/verify_kan_hypercube_baselines.py
 python verification/verify_low_dimensional_bounds.py
 ```
 
-All five checkers have no third-party dependencies. The knot-volume checker
+All fourteen checkers have no third-party dependencies. The knot-volume checker
 uses floating-point arithmetic to audit the fixed numerical dataset and exact
 finite-law formulas; the other checkers use exact integer and rational
-arithmetic. The small-deviation checker audits the displayed formulas, the
+arithmetic except for the Hex simulation-data audit, which recomputes the
+reported floating-point estimates from fixed integer counts. The optional
+Hex data generator uses PyTorch and selects CUDA automatically when available.
+The small-deviation checker audits the displayed formulas, the
 two sharpness families, the concurrent-work comparisons, and the reduction
 of the Samuels candidates on a large exact grid. It does not replace the
 cited extremal theorems.
