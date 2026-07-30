@@ -289,3 +289,6 @@ The later maximal-planar study
 [arXiv:2412.06068](https://arxiv.org/abs/2412.06068) also distinguishes
 labeled and unlabeled notions.  The present prescribed-arc model is stricter
 than both of those plane-graph notions.
+
+For a reversible single-edge sampler of the plane states, see
+[Hard-core heat-bath mixing on conflict hypercubes](HardCoreConflictWalkMixing.md).
