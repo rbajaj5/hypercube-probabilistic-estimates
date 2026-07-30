@@ -16,5 +16,7 @@ jobs:
         run: python verification/verify_affine_spectrum_hashing.py
       - name: Run projector matrix-hypercube checks
         run: python verification/verify_projector_matrix_hypercube.py
+      - name: Run projector heavy-tail checks
+        run: python verification/verify_projector_heavy_tails.py
       - name: Run small-deviation checks
         run: python verification/verify_low_dimensional_bounds.py
