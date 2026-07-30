@@ -17,6 +17,7 @@ small-deviation modules are mathematically independent.
 | [Matroid law for exact linear hashing](notes/MatroidHashingLaw.md) | Complete proof from inclusion--exclusion and the Crapo--Rota Critical Theorem; exact finite checks | Gives the exact probability for every finite support through the characteristic polynomial of its difference matroid | Classical theorem in a new hashing/Fourier presentation; no priority claim for the probability law |
 | [Exact projector matrix-hypercube law](notes/ProjectorMatrixHypercubeLaw.md) | Complete elementary enumeration for two real orthonormal projector bases | Replaces a variance-only matrix-Rademacher estimate by the complete angle-sensitive operator-norm distribution; the Zhang projector frame is the extremal mutually unbiased case | Elementary structured calculation; no standalone priority claim |
 | [Heavy-tail projector mixtures](notes/ProjectorHeavyTailMixtures.md) | Exact Pareto scale-mixture and quartic-shock calculations | Gives the exact angular tail coefficient, its phase transition at exponent \(2\), common-shock exponent quartering, and the independent-shock logarithmic correction | Elementary Pareto/Erlang consequences of the projector law; no general regular-variation or systemic-risk priority claim |
+| [Knot-volume hypercube mixtures](notes/KnotVolumeHypercubeMixtures.md) | Reproducible numerical experiment plus exact finite pushforward law | Turns fractional hyperbolic volumes of 16 seeded census knots into angle-labeled projector cubes, a normalized 256-configuration law, and exact Pareto tail coefficients | Experimental application of the projector law; no knot-volume equidistribution or random-knot claim |
 | [Sharp small-deviation bounds in dimensions at most four](notes/LowDimensionalSmallDeviations.md) | Complete corollary of Samuels' theorem and the finite-dimensional inequality in Paulin's proof; explicit extremizers | For \(2\leq n\leq4\) and \(0<\delta<1\), strictly improves the \(\delta(n/(n+\delta))^n\) branch of [arXiv:2607.23980](https://arxiv.org/abs/2607.23980) | The sharp low-dimensional theorem is classical; no priority claim |
 | [Concurrent small-deviation work](CONCURRENT_WORK.md) | Formula, chronology, and dependency audit of three July 2026 manuscripts | Separates their common Vlassis--Thomas proof input from the independent Samuels--Paulin route for \(n\leq4\) | Chronology only; no priority inference |
 
@@ -41,14 +42,17 @@ Run:
 python verification/verify_affine_spectrum_hashing.py
 python verification/verify_projector_matrix_hypercube.py
 python verification/verify_projector_heavy_tails.py
+python verification/verify_knot_volume_hypercubes.py
 python verification/verify_low_dimensional_bounds.py
 ```
 
-All four checkers use exact integer and rational arithmetic and have no
-third-party dependencies. The small-deviation checker audits the displayed
-formulas, the two sharpness families, the concurrent-work comparisons, and
-the reduction of the Samuels candidates on a large exact grid. It does not
-replace the cited extremal theorems.
+All five checkers have no third-party dependencies. The knot-volume checker
+uses floating-point arithmetic to audit the fixed numerical dataset and exact
+finite-law formulas; the other checkers use exact integer and rational
+arithmetic. The small-deviation checker audits the displayed formulas, the
+two sharpness families, the concurrent-work comparisons, and the reduction
+of the Samuels candidates on a large exact grid. It does not replace the
+cited extremal theorems.
 
 See [LITERATURE_PRIORITY.md](LITERATURE_PRIORITY.md) for the documented
 priority boundaries and the hypercube module's supercongruence-defect

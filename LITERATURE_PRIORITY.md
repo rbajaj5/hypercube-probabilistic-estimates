@@ -156,3 +156,20 @@ exact consequences of the finite projector law:
 
 These are self-contained calculations. The note does not claim a new general
 result in regular variation, multivariate extremes, or systemic-risk theory.
+
+### Knot-volume numerical companion
+
+The [knot-volume experiment](notes/KnotVolumeHypercubeMixtures.md) is a
+reproducible application of the projector and Pareto-mixture formulas, not a
+new theorem about knots. It uses
+[SnapPy's `CensusKnots`](https://snappy.computop.org/censuses.html) finite
+table and numerical
+[`Manifold.volume`](https://snappy.computop.org/manifold.html) computations.
+The sampled fractional volumes define an empirical circle measure whose
+pushforward is an exact finite probability law.
+
+No claim is made that hyperbolic knot volumes are equidistributed modulo one,
+that the census ordering defines a canonical random-knot model, or that the
+reported decimal volumes are interval-certified. The knot phases change the
+angular coefficient in the already-proved heavy-tail law; they do not change
+the Pareto exponent.
