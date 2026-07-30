@@ -12,13 +12,11 @@ jobs:
       - uses: actions/setup-python@v7
         with:
           python-version: "3.13"
-      - name: Run hypercube hashing checks
-        run: python verification/verify_affine_spectrum_hashing.py
-      - name: Run projector matrix-hypercube checks
-        run: python verification/verify_projector_matrix_hypercube.py
-      - name: Run projector heavy-tail checks
-        run: python verification/verify_projector_heavy_tails.py
-      - name: Run knot-volume hypercube checks
-        run: python verification/verify_knot_volume_hypercubes.py
-      - name: Run small-deviation checks
-        run: python verification/verify_low_dimensional_bounds.py
+      - name: Run all verification checks
+        shell: bash
+        run: |
+          set -euo pipefail
+          for script in verification/verify_*.py; do
+            echo "==> $script"
+            python "$script"
+          done

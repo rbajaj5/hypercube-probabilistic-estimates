@@ -357,6 +357,12 @@ proved in [the Collatz parity note](CollatzParityHypercube.md).  These chains
 can be compared through observables, but their mixing times are not
 interchangeable.
 
+A nonuniform heat-bath variant is developed in
+[the novelty-refresh note](NoveltyRefreshHypercube.md).  Centering each
+coordinate at its Bernoulli novelty probability preserves the exact
+subset-spectrum formula while changing the invariant entropy and the
+escape time from the all-zero state.
+
 ## Verification
 
 Run
