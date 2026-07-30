@@ -285,6 +285,11 @@ matrix-Rademacher inequality used for this comparison is Theorem 4.1 of
 - It does not use Zhang's false conjectured inequality. It uses only the
   valid rank-one projector configuration that exposed the failure.
 
+The
+[heavy-tail companion](ProjectorHeavyTailMixtures.md)
+uses this exact angular law to compute Pareto scale-mixture coefficients and
+to separate common from independent quartic shocks.
+
 ## Verification
 
 Run

@@ -140,3 +140,19 @@ scalar small-deviation and linear-hashing results.
 |---|---|---|
 | [Zhang (2014/2018)](https://arxiv.org/abs/1411.5058) | States the four-matrix auxiliary conjecture in the noncommutative AM--GM program | Supplies the conjectural setting; the exact projector counterexample supplies this module's distinguished frame |
 | [Tropp (2010/2012)](https://arxiv.org/abs/1004.4389) | Gives dimension-dependent subgaussian bounds for matrix Gaussian and Rademacher series in terms of a matrix variance proxy | Supplies the general concentration baseline that the exact structured law calibrates |
+
+### Heavy-tail companion boundary
+
+The [Pareto-mixture companion](notes/ProjectorHeavyTailMixtures.md) contains
+exact consequences of the finite projector law:
+
+- conditioning a bounded angular variable against a standard Pareto radial
+  scale;
+- the elementary concavity/convexity transition of its \(\alpha\)-moment at
+  \(\alpha=2\);
+- degree-four homogeneity under a shared scale; and
+- the four-stage Erlang survival formula for a product of independent Pareto
+  variables.
+
+These are self-contained calculations. The note does not claim a new general
+result in regular variation, multivariate extremes, or systemic-risk theory.
