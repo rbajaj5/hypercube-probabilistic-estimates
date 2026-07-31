@@ -30,6 +30,7 @@ small-deviation modules are mathematically independent.
 | [Exact discrete loop equations for projector hypercubes](notes/DiscreteLoopEquationsProjectorCubes.md) | Exact Rademacher integration by parts plus full finite-rank resolvent difference; matrix, trace, rank-one cavity, and multi-resolvent cavity identities | Gives a zero-remainder loop diagnostic, retains higher discrete product terms, exposes perturbations beyond the second moment, and adds a finite-sample residual certificate | Elementary finite-cube specialization motivated by Bourgade--Huang's cumulant and switching calculus; not their closed hierarchy, and no local-law or random-matrix-universality claim |
 | [Hopf-fiber projective kernel](notes/HopfFiberHypercubeKernel.md) | Embeds Boolean vertices in \(\mathbb{CP}^{d-1}\), derives the exact Fubini--Study/Hamming kernel, and transfers it to product noise, refresh walks, and Hex Walsh masses | Adds an exact projectively weighted Hex correlation computable from existing spectra, plus a finite Gaussian determinant for the cube Laplacian | Elementary consequences of standard Hopf-fiber Fourier and Fubini--Study identities; no endorsement of the source preprint's physical claims or priority claim |
 | [KAN baselines on the Boolean cube](notes/KANHypercubeBaselines.md) | Exact collapse of every scalar one-layer KAN on binary inputs to Walsh degree at most one; optimal \(L^2\) error and noise/mixing remainder certificates | Replaces unidentifiable spline resolution by controlled Walsh interactions and quantifies the gain exactly for Hex through \(3\times3\) | Elementary finite-cube projection identities motivated by arXiv:2407.11075's evaluation principles; no KAN-performance or priority claim |
+| [State coverage, supervision, and coordination on a hypercube](notes/StateCoverageCoordinationHypercube.md) | Sharp total-variation certificate, exact finite-buffer and sparse-signal laws, Walsh noise smoothing, oracle-loss guarantees, and a hidden-protocol lower ceiling | Separates distribution-shift gains, move-level oracle consistency, trace perfection, and protocol information | Classical finite-probability and Fourier identities motivated by OvercookedV2 and arXiv:2607.08984; no reinforcement-learning or priority claim |
 | [Sharp small-deviation bounds in dimensions at most four](notes/LowDimensionalSmallDeviations.md) | Complete corollary of Samuels' theorem and the finite-dimensional inequality in Paulin's proof; explicit extremizers | For \(2\leq n\leq4\) and \(0<\delta<1\), strictly improves the \(\delta(n/(n+\delta))^n\) branch of [arXiv:2607.23980](https://arxiv.org/abs/2607.23980) | The sharp low-dimensional theorem is classical; no priority claim |
 | [Concurrent small-deviation work](CONCURRENT_WORK.md) | Formula, chronology, and dependency audit of three July 2026 manuscripts | Separates their common Vlassis--Thomas proof input from the independent Samuels--Paulin route for \(n\leq4\) | Chronology only; no priority inference |
 
@@ -68,10 +69,11 @@ python verification/verify_hard_core_conflict_walk.py
 python verification/verify_discrete_loop_projector_cubes.py
 python verification/verify_hopf_fiber_hypercube.py
 python verification/verify_kan_hypercube_baselines.py
+python verification/verify_state_coverage_coordination.py
 python verification/verify_low_dimensional_bounds.py
 ```
 
-All eighteen checkers have no third-party dependencies. The knot-volume checker
+All nineteen checkers have no third-party dependencies. The knot-volume checker
 uses floating-point arithmetic to audit the fixed numerical dataset and exact
 finite-law formulas; the other checkers use exact integer and rational
 arithmetic except for the Hex simulation-data audit, which recomputes the
