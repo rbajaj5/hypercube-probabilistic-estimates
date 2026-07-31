@@ -33,6 +33,7 @@ small-deviation modules are mathematically independent.
 | [State coverage, supervision, and coordination on a hypercube](notes/StateCoverageCoordinationHypercube.md) | Sharp total-variation certificate, exact finite-buffer and sparse-signal laws, Walsh noise smoothing, oracle-loss guarantees, and a hidden-protocol lower ceiling | Separates distribution-shift gains, move-level oracle consistency, trace perfection, and protocol information | Classical finite-probability and Fourier identities motivated by OvercookedV2 and arXiv:2607.08984; no reinforcement-learning or priority claim |
 | [Physics-informed kernel filtering on the Boolean cube](notes/PhysicsInformedHypercubeKernel.md) | Exact simultaneous Walsh diagonalization of a Hamming kernel and cube Laplacian; closed-form bias, residual, and noisy-oracle risk | Replaces the population block solve by scalar degree filters and gives the exact optimal structural weight in each noisy mode | Elementary finite spectral specialization motivated by PIKS; no PDE, consistency, or priority claim |
 | [Rare-event mass separation on a hypercube](notes/RareEventMassSeparationHypercube.md) | Exact normalized subcube density, moments, influence, Fourier spectrum, noise law, entropy support, and sampling cost | Exhibits fixed total mass with exponentially vanishing support and Boolean boundary, while identifying the compensating variance and divergence | Elementary black-swan calibration motivated by Li--Xia's degree/mass separation; explicitly not a pluripotential-theory transfer or priority claim |
+| [Exact Rademacher JL laws for cube pairs](notes/RademacherJLHypercube.md) | Complete finite distortion distribution by Hamming distance, exact moments and collision law, and full-cube shell aggregation | Replaces a generic variance proxy by \(2(h-1)/(mh)\), proves exact preservation of cube edges, and computes finite failure probabilities | Classical Rademacher/binomial specialization motivated by arXiv:2402.10232; no general JL or priority claim |
 | [Sharp small-deviation bounds in dimensions at most four](notes/LowDimensionalSmallDeviations.md) | Complete corollary of Samuels' theorem and the finite-dimensional inequality in Paulin's proof; explicit extremizers | For \(2\leq n\leq4\) and \(0<\delta<1\), strictly improves the \(\delta(n/(n+\delta))^n\) branch of [arXiv:2607.23980](https://arxiv.org/abs/2607.23980) | The sharp low-dimensional theorem is classical; no priority claim |
 | [Concurrent small-deviation work](CONCURRENT_WORK.md) | Formula, chronology, and dependency audit of three July 2026 manuscripts | Separates their common Vlassis--Thomas proof input from the independent Samuels--Paulin route for \(n\leq4\) | Chronology only; no priority inference |
 
@@ -74,10 +75,11 @@ python verification/verify_kan_hypercube_baselines.py
 python verification/verify_state_coverage_coordination.py
 python verification/verify_physics_informed_hypercube_kernel.py
 python verification/verify_rare_event_mass_separation.py
+python verification/verify_rademacher_jl_hypercube.py
 python verification/verify_low_dimensional_bounds.py
 ```
 
-All twenty-one checkers have no third-party dependencies. The knot-volume checker
+All twenty-two checkers have no third-party dependencies. The knot-volume checker
 uses floating-point arithmetic to audit the fixed numerical dataset and exact
 finite-law formulas; the other checkers use exact integer and rational
 arithmetic except for the Hex simulation-data audit, which recomputes the
